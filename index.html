@@ -1,11 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<base href="http://geisel.narod.ru/mmpi2.htm"><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">This is Google&#39;s cache of <a href="http://geisel.narod.ru/mmpi2.htm" style="text-decoration:underline;color:#00c">http://geisel.narod.ru/mmpi2.htm</a>. It is a snapshot of the page as it appeared on 7 Oct 2013 10:21:12 GMT. The <a href="http://geisel.narod.ru/mmpi2.htm" style="text-decoration:underline;color:#00c">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222" style="text-decoration:underline;color:#00c">Learn more</a><br>Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:-jxAL9D2S1cJ:geisel.narod.ru/mmpi2.htm&amp;hl=en&amp;gl=ca&strip=1" style="text-decoration:underline;color:#00c">Text-only version</a></div>
-<div>&nbsp;</div></div></div><div style="position:relative">
-<script type="text/javascript" src="/abnl/?narodads=1&data=%5EIlAfcjvKmU8PQwieZBmQ09p%5EqX6bgoo"></script><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd"> 
-
 <html>
-
 <!--
 	Copyright 2008 Kevin Timmerman
 	mmpi2008 [@t] compendiumarcana [d0t] com
@@ -25,26 +18,11 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see http://www.gnu.org/licenses/.
 -->
-
-
-<!-- Mirrored from www.geocities.com/themmpi/
-     by HTTrack Website Copier/3.x [XR&CO'2007],
-     Wed, 30 Apr 2008 03:00:59 GMT -->
-
 <head>
-
 <title>MMPI-2 Scoring</title>
-
 </head>
-
 <body>
-<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp
-
-<!-- following code added by server. PLEASE REMOVE -->
-<!-- preceding code added by server. PLEASE REMOVE -->
-
 <script type="text/javascript">
-
 // Tell JSLint about intentional global variables
 /*global questions, scales, rin, longform, gender, ans */
 
@@ -1958,48 +1936,31 @@ function doc_write_all_questions()
 	}
 	if(i>370) { document.write("<\/div>"); }
 }
-
 </script>
 
-<form name="config" action="#"><p>
+<form name="config" action="#">
+	<p>
+		<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
+		<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
 
-<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
-<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
+		<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
+		<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
 
-<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
-<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
+	</p>
+</form>
 
-</p></form>
+<h1>
+	<script type="text/javascript">document.write(questions[0]);</script>
+</h1>
 
-<h1><script type="text/javascript">document.write(questions[0]);</script></h1>
+<form name="questions" action="#">
+	<p>
+		<script type="text/javascript">doc_write_all_questions();</script>
+		<br>
+		<input type="button" value="Score" onclick="score_rb(document.forms.questions);">
+		<br><br>
 
-<form name="questions" action="#"><p>
-
-<script type="text/javascript">doc_write_all_questions();</script>
-
-<br>
-
-<input type="button" value="Score" onclick="score_rb(document.forms.questions);">
-
-<br><br>
-
-</p></form>
-
-<!---
-<form name="anstext" action=""><p>
-
-<textarea id="ata" cols=76 rows=9></textarea><br>
-<input type="button" value="Score" onclick="score_text(document.forms.anstext.ata.value);">
-
-<br><br>
-
-</p></form>
--->
-
-<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp<p>&nbsp
-
-
-<!-- copyright (i3) --><div align="center"><a href="http://www.ucoz.ru/" title="Создать сайт бесплатно"><img style="margin:0;padding:0;border:0;" alt="Hosted by uCoz" src="http://s207.ucoz.net/img/cp/7.gif" width="80" height="15" title="Hosted by uCoz" /></a><br /></div><!-- /copyright -->
+	</p>
+</form>
 </body>
-
-</html><div><span id="openstat2323431"></span><script type="text/javascript">var openstat = { counter: 2323431, next: openstat };(function(d, t, p) {var j = d.createElement(t); j.async = true; j.type = "text/javascript";j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);})(document, "script", document.location.protocol);</script><script type="text/javascript">new Image().src = "http://counter.yadro.ru/hit;narodcounter?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";"+Math.random();</script></div>
+</html>
