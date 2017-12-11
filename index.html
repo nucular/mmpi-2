@@ -1,52 +1,36 @@
-<html>
-	<!--
-		Copyright 2008 Kevin Timmerman <mmpi2008 [@t] compendiumarcana [d0t] com>
-		Copyright 2017 nucular <github.com/nucular>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MMPI-2 for all</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<header class="header clearfix">
+			<h3 class="text-muted">MMPI-2 for all</h3>
+		</header>
+		<main role="main" id="app">
+			<div class="jumbotron">
+				<h1 class="display-3">Take the MMPI-2</h1>
+				<p class="lead">
+					The Minnesota Multiphasic Personality Inventory (MMPI) is a standardized psychometric test of adult personality and psychopathology.
+				</p>
+				<p><a class="btn btn-lg btn-success" href="#" role="button">Start</a></p>
+			</div>
 
-		This program is for educational use only.
+			<article class="article">
+			</article>
+		</main>
+		<footer class="footer">
+			<p>Dedicated to Liberty.</p>
+		</footer>
+	</div>
 
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version.
-
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details.
-
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see http://www.gnu.org/licenses/.
-	-->
-	<head>
-		<title>MMPI-2 Scoring</title>
-	</head>
-	<body>
-		<script type="text/javascript" src="./data.js"></script>
-		<script type="text/javascript" src="./script.js"></script>
-
-		<form name="config" action="#">
-			<p>
-				<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
-				<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
-
-				<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
-				<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
-
-			</p>
-		</form>
-
-		<h1>
-			<script type="text/javascript">document.write(questions[0]);</script>
-		</h1>
-
-		<form name="questions" action="#">
-			<p>
-				<script type="text/javascript">doc_write_all_questions();</script>
-				<br>
-				<input type="button" value="Score" onclick="score_rb(document.forms.questions);">
-				<br><br>
-			</p>
-		</form>
-	</body>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="app.js"></script>
+</body>
 </html>
