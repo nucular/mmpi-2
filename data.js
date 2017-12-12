@@ -1,4 +1,17 @@
-// Test questions
+/*
+The original version of this file was taken from the MMPI-2 implementation
+released by Kevin Timmerman under the GNU General Public License v3.0 in 2008.
+
+Its contents are presumably copyrighted by the University of Minnesota and their
+distribution rights owned by Pearson's Clinical Assessment Group.
+
+It is herein used to the best of my conscience for a nonprofit, educational
+purpose in the interest of the public.
+
+As such, while the legal specifics of it may be questionable, it is incorporated
+into this public domain work in good faith.
+*/
+
 questions=[
 	// 0 - Description
 	"MMPI-2 Questions",
