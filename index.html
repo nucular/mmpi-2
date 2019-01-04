@@ -6,31 +6,88 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="app">
 		<header class="header clearfix">
+			<nav class="nav nav-pills float-right">
+                <router-link class="nav-link" to="/">About</router-link>
+                <router-link class="nav-link" to="/test">Test</router-link>
+                <router-link class="nav-link" to="/report">Report</router-link>
+			</nav>
 			<h3 class="text-muted">MMPI-2 for all</h3>
 		</header>
-		<main role="main" id="app">
-			<div class="jumbotron">
-				<h1 class="display-3">Take the MMPI-2</h1>
-				<p class="lead">
-					The Minnesota Multiphasic Personality Inventory (MMPI) is a standardized psychometric test of adult personality and psychopathology.
-				</p>
-				<p><a class="btn btn-lg btn-success" href="#" role="button">Start</a></p>
-			</div>
-
-			<article class="article">
-			</article>
-		</main>
+		<router-view></router-view>
 		<footer class="footer">
 			<p>Unlicensed. Dedicated to Liberty. <a href="https://github.com/nucular/mmpi-2">Fork me on GitHub.</a></p>
 		</footer>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script type="text/x-template" id="about-view-template">
+		<div class="jumbotron">
+			<h1 class="display-3">Take the MMPI-2</h1>
+			<p class="lead">
+				The Minnesota Multiphasic Personality Inventory (MMPI) is a standardized psychometric test of adult personality and psychopathology.
+			</p>
+			<p><router-link class="btn btn-lg btn-success" to="/test/1" role="button">Start</router-link></p>
+		</div>
+	</script>
+
+	<script type="text/x-template" id="test-view-template">
+		<div class="jumbotron">
+			<div class="progress">
+				<div class="progress-bar" role="progressbar"
+					:aria-valuenow="currentQuestion"
+					aria-valuemin="1" :aria-valuemax="questions.length"
+					style="min-width: 2em;"
+					:style="{width: (currentQuestion / questions.length) * 100 + '%'}">
+					{{Math.floor((currentQuestion / questions.length) * 100)}}%
+				</div>
+			</div>
+			<h1 class="display-4">Question {{currentQuestion + 1}}</h1>
+			<h2>
+				{{questions[currentQuestion]}}
+			</h2>
+			<div class="btn-group">
+				<button type="button" class="btn btn-success" on:click="answer(true);">True</button>
+				<button type="button" class="btn" on:click="answer(null);">Unsure</button>
+				<button type="button" class="btn btn-danger" on:click="answer(false);">False</button>
+			</div>
+			<nav aria-label="Question navigation">
+				<ul class="pagination pagination-lg flex justify-content-center">
+					<li class="page-item" :class="{disabled: currentQuestion <= 0}">
+						<router-link class="page-link" :to="'/test/' + currentQuestion" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</router-link>
+					</li>
+					<li v-for="n in paginationEnd - paginationStart" class="page-item" :class="{active: n + paginationStart == currentQuestion + 1}">
+						<router-link class="page-link" :to="'/test/' + (n + paginationStart)">{{n + paginationStart}}</router-link>
+					</li>
+					<li class="page-item" :class="{disabled: currentQuestion == questions.length - 1}">
+						<router-link class="page-link" :to="'/test/' + (currentQuestion + 2)" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</router-link>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</script>
+
+	<script type="text/x-template" id="report-view-template">
+        <div>
+            <line-chart :chart-data="charts[0]"></line-chart>
+        </div>
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+    <script src="components/linechart.js"></script>
+	<script src="views/about.js"></script>
+	<script src="views/test.js"></script>
+	<script src="views/report.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
