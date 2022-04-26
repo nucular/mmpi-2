@@ -323,7 +323,7 @@ questions=[
 	"Most of the time I wish I were dead.",
 	"Sometimes I become so excited that I find it hard to get to sleep.",
 	"I have certainly had more than my share of things to worry about.",
-	"No one cares much about what happens to you.",
+	"No one cares much about what happens to me.",
 	"At times I hear so well that it bothers me.",
 	"I forget right away what people say to me.",
 	"I usually have to stop and think before I act, even in small matters.",
